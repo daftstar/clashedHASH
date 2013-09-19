@@ -1,0 +1,70 @@
+<!-- 
+
+Sinatra only let's you pass variables prefixed with @ (as if they're instance variables)
+
+In ERB files, you can evaluate ruby code by surrounding it with <%= %>. This will evaluate the ruby code and place the result into the HTML
+
+You can also use the tags <% %> if you want the ruby code evaluated, but not placed in the file. An example would be in an if statement.
+ -->
+
+
+
+<!DOCTYPE html>  
+
+
+<html lang="en">  
+<head>
+<meta charset="utf-8" />  
+	  <title>Hash Check Submit Form</title>
+	 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	  <link rel="stylesheet" href="application.css" type="text/css" />
+	  
+<!-- 	  Google Web Fonts -->
+	  <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+	  <link href='http://fonts.googleapis.com/css?family=Abril+Fatface' rel='stylesheet' type='text/css'>
+</head>
+	 
+<body>
+
+ 
+
+	<div id="wrapper">
+
+		<div class="forms">
+				<form name="input" action="/twitter" method="post">
+
+				<input id="hash_tag1" type="text" placeholder="hashtag 1" name="hash_1"></input>
+			 	<input id="hash_tag2" type="text" placeholder="hashtag 2" name="hash_2"></input> 
+			  <input id="submit"    type="submit">																		</input>
+			  </form>
+		</div>
+
+
+		<div class="main">
+			<h1> Hello <%= @name %> and <%= @partner_name %> </h1>
+			<% if @show_description %>
+				<p>welcome home</p>
+			<% end %>
+		</div>
+
+
+	</div>
+
+
+
+
+
+	<script type="text/javascript">
+		jQuery('#hash_tag1').focus().val("");
+	</script>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
